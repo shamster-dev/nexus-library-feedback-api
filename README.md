@@ -1,4 +1,4 @@
-A simple, lightweight Node.js service that listens for feedback and complaints submitted from the Garry's Mod Nexus Library settings menu, applies rate limiting, and forwards them directly to your Discord channel via webhook.
+The Node.js application that is used to submit complaints and feedback for the Nexus Library. 
 
 ---
 
@@ -22,6 +22,4 @@ RATE_LIMIT_MAX_REQUESTS=5
 
 ## Endpoints
 
-- `GET /`: Service status and port information
-- `GET /health`: Healthcheck endpoint (`{ status: "ok", uptime: ... }`)
 - `POST /feedback`: Receives feedback/complaints from Garry's Mod
