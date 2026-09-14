@@ -12,7 +12,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3402202751
 
 ---
 
-# Env
+## Env
 ```env
 PORT=3051
 DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your_webhook_id/your_webhook_token
