@@ -97,6 +97,7 @@ app.post("/feedback", async (req, res) => {
     const server = data.server ? String(data.server).trim() : "Unknown Server";
     const theme = data.theme ? String(data.theme).trim() : "default";
     const language = data.language ? String(data.language).trim() : "en";
+    const version = data.version ? String(data.version).trim() : "2.0"; // <-- Added this line
 
     // Validation
     if (!message || message.length < 3) {
@@ -124,8 +125,9 @@ app.post("/feedback", async (req, res) => {
     const color = type === "Complaint" ? 0xED4245 : 0x57F287;
     const icon = type === "Complaint" ? "⚠️" : "💡";
 
+    // Fixed: backticks used so ${steamid} interpolates properly
     const steamProfile = (steamid !== "Unknown" && /^\d{17}$/.test(steamid))
-        ? "[${steamid}](https://steamcommunity.com/profiles/${steamid})"
+        ? `[${steamid}](https://steamcommunity.com/profiles/${steamid})`
         : steamid;
 
     const embed = {
